@@ -110,29 +110,53 @@ window.addEventListener('scroll', () => {
 });
 
 // ----- Burger Menu Mobile Overlay -----
-const burger = document.querySelector('.navbar-toggler');
-const navCollapse = document.querySelector('.navbar-collapse');
-if (burger && navCollapse) {
-  burger.addEventListener('click', function() {
-      navCollapse.classList.toggle('show');
-      if (navCollapse.classList.contains('show')) {
-          navCollapse.setAttribute('aria-modal', 'true');
-          navCollapse.setAttribute('tabindex', '0');
-          navCollapse.focus();
-      } else {
-          navCollapse.removeAttribute('aria-modal');
-          navCollapse.removeAttribute('tabindex');
-      }
-  });
-  // Fermer le menu au clic sur un lien
-  navLinks.forEach(link => {
-      link.addEventListener('click', () => {
-          navCollapse.classList.remove('show');
-          navCollapse.removeAttribute('aria-modal');
-          navCollapse.removeAttribute('tabindex');
-      });
-  });
-}
+document.addEventListener('DOMContentLoaded', function() {
+    const burger = document.querySelector('.navbar-toggler');
+    const navCollapse = document.querySelector('.navbar-collapse');
+
+    if (burger && navCollapse) {
+        // Supprimer les gestionnaires d'événements existants
+        burger.replaceWith(burger.cloneNode(true));
+        const newBurger = document.querySelector('.navbar-toggler');
+
+        // Ajouter le nouveau gestionnaire d'événements
+        newBurger.addEventListener('click', function(event) {
+            event.preventDefault();
+            event.stopPropagation();
+            
+            if (navCollapse.classList.contains('show')) {
+                navCollapse.classList.remove('show');
+                navCollapse.removeAttribute('aria-modal');
+                navCollapse.removeAttribute('tabindex');
+            } else {
+                navCollapse.classList.add('show');
+                navCollapse.setAttribute('aria-modal', 'true');
+                navCollapse.setAttribute('tabindex', '0');
+            }
+        });
+
+        // Gestionnaire pour les liens de navigation
+        const navLinks = document.querySelectorAll('.navbar-nav .nav-link');
+        navLinks.forEach(link => {
+            link.addEventListener('click', () => {
+                navCollapse.classList.remove('show');
+                navCollapse.removeAttribute('aria-modal');
+                navCollapse.removeAttribute('tabindex');
+            });
+        });
+
+        // Fermer le menu si on clique en dehors
+        document.addEventListener('click', function(event) {
+            if (!navCollapse.contains(event.target) && 
+                !newBurger.contains(event.target) && 
+                navCollapse.classList.contains('show')) {
+                navCollapse.classList.remove('show');
+                navCollapse.removeAttribute('aria-modal');
+                navCollapse.removeAttribute('tabindex');
+            }
+        });
+    }
+});
 
 // Dynamic skill badges animation
 const animateSkills = () => {
@@ -398,32 +422,80 @@ const initTitleSlider = () => {
   const slides = document.querySelectorAll('.slide');
   const dotsContainer = document.querySelector('.slider-dots');
   let currentSlide = 0;
+  let isAnimating = false;
 
   // Create dots
   slides.forEach((_, index) => {
-      const dot = document.createElement('div');
-      dot.classList.add('dot');
-      if (index === 0) dot.classList.add('active');
-      dot.addEventListener('click', () => goToSlide(index));
-      dotsContainer.appendChild(dot);
+    const dot = document.createElement('div');
+    dot.classList.add('dot');
+    if (index === 0) dot.classList.add('active');
+    dot.addEventListener('click', () => {
+      if (!isAnimating) {
+        goToSlide(index);
+      }
+    });
+    dotsContainer.appendChild(dot);
   });
 
   const dots = document.querySelectorAll('.dot');
 
   function goToSlide(index) {
-      slides[currentSlide].classList.remove('active');
-      dots[currentSlide].classList.remove('active');
-      currentSlide = index;
-      slides[currentSlide].classList.add('active');
-      dots[currentSlide].classList.add('active');
+    if (currentSlide === index) return;
+    
+    isAnimating = true;
+    slides[currentSlide].classList.remove('active');
+    dots[currentSlide].classList.remove('active');
+    currentSlide = index;
+    slides[currentSlide].classList.add('active');
+    dots[currentSlide].classList.add('active');
+
+    setTimeout(() => {
+      isAnimating = false;
+    }, 500); // Correspond à la durée de la transition CSS
   }
 
   function nextSlide() {
+    if (!isAnimating) {
       goToSlide((currentSlide + 1) % slides.length);
+    }
   }
 
   // Auto advance slides
-  setInterval(nextSlide, 3000);
+  const interval = setInterval(nextSlide, 3000);
+
+  // Pause auto-advance on hover
+  slides.forEach(slide => {
+    slide.addEventListener('mouseenter', () => clearInterval(interval));
+    slide.addEventListener('mouseleave', () => setInterval(nextSlide, 3000));
+  });
+
+  // Touch events for mobile
+  let touchStartX = 0;
+  let touchEndX = 0;
+
+  document.querySelector('.slider-container').addEventListener('touchstart', (e) => {
+    touchStartX = e.touches[0].clientX;
+  }, false);
+
+  document.querySelector('.slider-container').addEventListener('touchend', (e) => {
+    touchEndX = e.changedTouches[0].clientX;
+    handleSwipe();
+  }, false);
+
+  function handleSwipe() {
+    const swipeThreshold = 50;
+    const diff = touchEndX - touchStartX;
+
+    if (Math.abs(diff) > swipeThreshold) {
+      if (diff > 0 && currentSlide > 0) {
+        // Swipe right - previous slide
+        goToSlide(currentSlide - 1);
+      } else if (diff < 0 && currentSlide < slides.length - 1) {
+        // Swipe left - next slide
+        goToSlide(currentSlide + 1);
+      }
+    }
+  }
 };
 
 // Circular Skills Animation
