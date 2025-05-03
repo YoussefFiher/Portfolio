@@ -1,6 +1,30 @@
 (function($) {
   "use strict"; // Start of use strict
 
+  // Initialize language
+  let currentLang = 'fr';
+
+  // Function to toggle language
+  window.toggleLanguage = function() {
+    currentLang = currentLang === 'fr' ? 'en' : 'fr';
+    updateLanguage();
+  };
+
+  // Function to update all translations
+  window.updateLanguage = function() {
+    document.getElementById('current-lang').textContent = currentLang.toUpperCase();
+    document.querySelector('.language-switch .other-lang').textContent = 
+      currentLang === 'fr' ? 'EN' : 'FR';
+
+    // Update all translatable elements
+    document.querySelectorAll('[data-i18n]').forEach(element => {
+      const key = element.getAttribute('data-i18n');
+      if (translations[currentLang] && translations[currentLang][key]) {
+        element.textContent = translations[currentLang][key];
+      }
+    });
+  }
+
   // Smooth scrolling using jQuery easing
   $('a.js-scroll-trigger[href*="#"]:not([href="#"])').click(function() {
     if (location.pathname.replace(/^\//, '') == this.pathname.replace(/^\//, '') && location.hostname == this.hostname) {
@@ -380,6 +404,7 @@ document.addEventListener('DOMContentLoaded', () => {
   initTitleSlider();
   initCircularSkills();
   initProjectSlider();
+  updateLanguage(); // Initialize translations
 });
 
 // Project cards hover effect

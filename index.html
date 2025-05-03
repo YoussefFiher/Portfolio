@@ -35,7 +35,7 @@
 
     <nav class="navbar navbar-expand-lg navbar-dark bg-primary fixed-top" id="sideNav">
       <a class="navbar-brand js-scroll-trigger" href="#page-top">
-        <span class="d-block d-lg-none">Portfolio</span>
+        <span class="d-block d-lg-none" data-i18n="portfolio">Portfolio</span>
         <span class="d-none d-lg-block">
           <img class="img-fluid img-profile rounded-circle mx-auto mb-2" src="img/pdp.jpg" alt="">
         </span>
@@ -43,22 +43,27 @@
       <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
         <span class="navbar-toggler-icon"></span>
       </button>
+      <div class="language-switch">
+        <button onclick="toggleLanguage()" class="btn btn-light btn-sm">
+          <span id="current-lang">FR</span> / <span class="other-lang">EN</span>
+        </button>
+      </div>
       <div class="collapse navbar-collapse" id="navbarSupportedContent">
         <ul class="navbar-nav">
           <li class="nav-item">
-            <a class="nav-link js-scroll-trigger" href="#about">A propos</a>
+            <a class="nav-link js-scroll-trigger" href="#about" data-i18n="about">A propos</a>
           </li>
           <li class="nav-item">
-            <a class="nav-link js-scroll-trigger" href="#experience">compétences</a>
+            <a class="nav-link js-scroll-trigger" href="#experience" data-i18n="skills">Compétences</a>
           </li>
           <li class="nav-item">
-            <a class="nav-link js-scroll-trigger" href="#education">Education</a>
+            <a class="nav-link js-scroll-trigger" href="#education" data-i18n="education">Education</a>
           </li>
           <li class="nav-item">
-            <a class="nav-link js-scroll-trigger" href="#projects">Projets</a>
+            <a class="nav-link js-scroll-trigger" href="#projects" data-i18n="projects">Projets</a>
           </li>
           <li class="nav-item">
-            <a class="nav-link js-scroll-trigger" href="#certificates">Certificats</a>
+            <a class="nav-link js-scroll-trigger" href="#certificates" data-i18n="certificates">Certificats</a>
           </li>
         </ul>
       </div>
@@ -78,11 +83,11 @@
                 
               </div>
               <div class="slide">
-                <h1 class="slide-title">Data Scientist</h1>
-                <p class="slide-subtitle">Machine Learning & Analytics</p>
+                <h1 class="slide-title" data-i18n="data-scientist">Data Scientist</h1>
+                <p class="slide-subtitle" data-i18n="ml-analytics">Machine Learning & Analytics</p>
               </div>
               <div class="slide">
-                <h1 class="slide-title">étudiant à Université de Namur</h1>
+                <h1 class="slide-title" data-i18n="student-namur">étudiant à Université de Namur</h1>
               </div>
             </div>
             <div class="slider-dots"></div>
@@ -108,7 +113,7 @@
           </section>
 
           
-          <p class="mb-5">Je suis actuellement étudiant en programme de bachelier-master (BaMa) en sciences informatiques, avec une spécialisation en développement logiciel et programmation, et je poursuis un master en science des données. Mon parcours académique combine une formation rigoureuse en développement logiciel avec des compétences avancées en analyse de données, ce qui me permet d’aborder des problématiques complexes dans des domaines axés sur les données.</p>
+          <p class="mb-5" data-i18n="presentation">Je suis actuellement étudiant en programme de bachelier-master (BaMa) en sciences informatiques, avec une spécialisation en développement logiciel et programmation, et je poursuis un master en science des données. Mon parcours académique combine une formation rigoureuse en développement logiciel avec des compétences avancées en analyse de données, ce qui me permet d'aborder des problématiques complexes dans des domaines axés sur les données.</p>
           <ul class="list-inline list-social-icons mb-0">
             <li class="list-inline-item">
               <a href="https://www.linkedin.com/in/youssef-fiher-a21105302/" target="_blank">
@@ -168,7 +173,7 @@
 
           <div class="resume-item d-flex flex-column flex-md-row mb-5">
             <div class="resume-content mr-auto">
-              <h3 class="mb-0">back-end</h3>
+              <h3 class="mb-0" data-i18n="back-end">Back-end</h3>
               <div class="subheading mb-3">
                 <ul class="list-inline list-icons">
                   <li class="list-inline-item">
@@ -189,13 +194,13 @@
                   </li>
                 </ul>
               </div>
-              <div class="subheading mb-3"> j'ai une expertise dans la création d'applications robustes et évolutives. J'utilise Node.js et Express.js pour construire des API performantes et gérer les communications entre le client et le serveur. De plus, j'ai une expérience avec Django et Flask pour développer des solutions web basées sur Python, ce qui me permet de répondre aux besoins variés des projets tout en assurant une intégration fluide avec les bases de données et les systèmes tiers.</div>
+              <div class="subheading mb-3" data-i18n="back-end-desc">j'ai une expertise dans la création d'applications robustes et évolutives. J'utilise Node.js et Express.js pour construire des API performantes et gérer les communications entre le client et le serveur. De plus, j'ai une expérience avec Django et Flask pour développer des solutions web basées sur Python, ce qui me permet de répondre aux besoins variés des projets tout en assurant une intégration fluide avec les bases de données et les systèmes tiers.</div>
             </div>
           </div>
 
           <div class="resume-item d-flex flex-column flex-md-row mb-5">
             <div class="resume-content mr-auto">
-              <h3 class="mb-0">Modélisation SI</h3>
+              <h3 class="mb-0" data-i18n="si-modeling">Modélisation SI</h3>
               <div class="subheading mb-3">
                 <ul class="list-inline list-icons">
                   <li class="list-inline-item">
@@ -220,7 +225,7 @@
                   </li>
                 </ul>
               </div>
-              <div class="subheading mb-3">Je maîtrise divers outils et langages pour la modélisation des systèmes d'information, y compris UML pour la conception, et différents systèmes de gestion de bases de données tels que MySQL, SQLite, PostgreSQL et MongoDB, ce qui me permet de créer des structures de données robustes et adaptées aux besoins des applications.</div>
+              <div class="subheading mb-3" data-i18n="si-modeling-desc">Je maîtrise divers outils et langages pour la modélisation des systèmes d'information, y compris UML pour la conception, et différents systèmes de gestion de bases de données tels que MySQL, SQLite, PostgreSQL et MongoDB, ce qui me permet de créer des structures de données robustes et adaptées aux besoins des applications.</div>
             </div>
           </div>
 
@@ -229,7 +234,7 @@
 
           <div class="resume-item d-flex flex-column flex-md-row">
             <div class="resume-content mr-auto">
-              <h3 class="mb-0">Analyse de données</h3>
+              <h3 class="mb-0" data-i18n="data-analysis">Analyse de données</h3>
               <div class="subheading mb-3">
                 <ul class="list-inline list-icons">
                   <li class="list-inline-item">
@@ -247,13 +252,13 @@
                 </ul>
               </div>
 
-              <div class="subheading mb-3">Je suis impliqué dans l'analyse de données en utilisant divers outils et techniques. Cela inclut la visualisation de données, le machine learning, et l'exploration de graphes (graph mining) pour extraire des informations pertinentes.</div>
+              <div class="subheading mb-3" data-i18n="data-analysis-desc">Je suis impliqué dans l'analyse de données en utilisant divers outils et techniques. Cela inclut la visualisation de données, le machine learning, et l'exploration de graphes (graph mining) pour extraire des informations pertinentes.</div>
             </div>
           </div>
 
           <div class="resume-item d-flex flex-column flex-md-row mb-5">
             <div class="resume-content mr-auto">
-              <h3 class="mb-0">Programmation</h3>
+              <h3 class="mb-0" data-i18n="programming">Programmation</h3>
               <div class="subheading mb-3">
                 <ul class="list-inline list-icons">
                   <li class="list-inline-item">
@@ -274,7 +279,7 @@
                   </li>
                 </ul>
               </div>
-              <div class="subheading mb-3">Je suis compétent dans plusieurs langages de programmation, notamment Python, Java, JavaScript, TypeScript et R, ce qui me permet de développer des applications robustes et efficaces.</div>
+              <div class="subheading mb-3" data-i18n="programming-desc">Je suis compétent dans plusieurs langages de programmation, notamment Python, Java, JavaScript, TypeScript et R, ce qui me permet de développer des applications robustes et efficaces.</div>
             </div>
           </div>
 
@@ -288,14 +293,14 @@
         <div class="my-auto">
     
           
-          <h2 class="mb-5">Education</h2>
+          <h2 class="mb-5" data-i18n="education">Education</h2>
           <div class="resume-item d-flex flex-column flex-md-row mb-5">
             
             <div class="resume-content mr-auto">
               <div class = "ok">
-              <h3 class="mb-0">Université de Namur</h3>
+              <h3 class="mb-0" data-i18n="university">Université de Namur</h3>
             </div>
-              <div class="subheading mb-3">bachelier en sciences informatiques</div>
+              <div class="subheading mb-3" data-i18n="bachelor">bachelier en sciences informatiques</div>
             </div>
             <div class="resume-date text-md-right">
              
@@ -305,12 +310,12 @@
 
           <div class="resume-item d-flex flex-column flex-md-row">
             <div class="resume-content mr-auto">
-              <h3 class="mb-0">Université de namur</h3>
-              <div class="subheading mb-3">Master en sciences de Données</div>
+              <h3 class="mb-0" data-i18n="university">Université de namur</h3>
+              <div class="subheading mb-3" data-i18n="master">Master en sciences de Données</div>
             </div>
             <div class="resume-date text-md-right">
               
-              <span class="text-primary">septembre 2024 - en cours</span>
+              <span class="text-primary">septembre 2024 - <span data-i18n="ongoing">en cours</span></span>
             </div>
           </div>
 
@@ -319,7 +324,7 @@
 
       <section class="resume-section p-3 p-lg-5 d-flex flex-column" id="projects">
         <div class="my-auto">
-            <h2 class="mb-5">Projets</h2>
+            <h2 class="mb-5" data-i18n="projects">Projets</h2>
 
             <div class="projects-container">
 
@@ -328,9 +333,8 @@
                   <img class="logo3" src="img/hms.png"/>
                 </div>
                 <div class="info">
-                    <h3>Technologie : Angular/i18n</h3>
-                    <p>Ce projet consiste à développer un back-office pour la solution Ewon Cloud d’HMS. L'application permet de gérer les traductions du contenu du site à travers une interface web sécurisée. Le projet utilise Java (Spring Boot) pour les services backend, Angular pour l’interface utilisateur, i18n pour la gestion multilingue et Amazon Web Services pour l'infrastructure cloud
-                    </p>
+                    <h3 data-i18n="project-technology">Technologie : Angular/i18n</h3>
+                    <p data-i18n="hms-desc">Ce projet consiste à développer un back-office pour la solution Ewon Cloud d'HMS. L'application permet de gérer les traductions du contenu du site à travers une interface web sécurisée. Le projet utilise Java (Spring Boot) pour les services backend, Angular pour l’interface utilisateur, i18n pour la gestion multilingue et Amazon Web Services pour l'infrastructure cloud</p>
                 </div>
             </div>
 
@@ -339,9 +343,8 @@
                 <img class="logo3" src="img/Seekr.png"/>
               </div>
               <div class="info">
-                  <h3>Technologie : PYTHON / FOLIUM / MAPBOX / SKLEARN</h3>
-                  <p>Seekr est une application d’exploration culturelle et ludique de la ville de Namur. Basée sur les données ouvertes collectées par la commune de Namur, elle utilise du clustering pour créer des parcours d'œuvres d’art à découvrir, optimise les itinéraires via des algorithmes de graphe et propose une expérience interactive basée sur la géolocalisation.
-                  </p>
+                  <h3 data-i18n="project-technology">Technologie : PYTHON / FOLIUM / MAPBOX / SKLEARN</h3>
+                  <p data-i18n="seekr-desc">Seekr est une application d’exploration culturelle et ludique de la ville de Namur. Basée sur les données ouvertes collectées par la commune de Namur, elle utilise du clustering pour créer des parcours d'œuvres d’art à découvrir, optimise les itinéraires via des algorithmes de graphe et propose une expérience interactive basée sur la géolocalisation.</p>
               </div>
             </div>
 
@@ -353,7 +356,7 @@
                     </div>
                     <div class="info">
                         <h3>Technologie : Angular</h3>
-                        <p>Clothed est une application web conçue pour faciliter la donation de vêtements. Elle permet aux utilisateurs de donner des vêtements qu'ils n'utilisent plus à des personnes qui en ont besoins</p>
+                        <p data-i18n="clothed-desc">Clothed est une application web conçue pour faciliter la donation de vêtements. Elle permet aux utilisateurs de donner des vêtements qu'ils n'utilisent plus à des personnes qui en ont besoins</p>
                     </div>
                 </div>
     
@@ -364,7 +367,7 @@
                     </div>
                     <div class="info">
                         <h3>Technologie : JAVA (ANTLR)</h3>
-                        <p>Ce projet consiste à développer un compilateur en Java, utilisant ANTLR, pour traduire un langage à base d'emoji vers du code Python. Ce code Python est ensuite utilisé pour contrôler un micro-robot</p>
+                        <p data-i18n="emoji-desc">Ce projet consiste à développer un compilateur en Java, utilisant ANTLR, pour traduire un langage à base d'emoji vers du code Python. Ce code Python est ensuite utilisé pour contrôler un micro-robot</p>
                     </div>
                 </div>
     
@@ -374,14 +377,13 @@
                     <img class="logo4" src="img/elia.png"/>
                   </div>
                   <div class="info">
-                      <h3>Technologie : POWER BI / SQL / SSIS)</h3>
-                      <p>Ce projet a impliqué l’analyse des exigences et l’ETL de données fournies par Elia (systèmes éoliens et solaires) pour structurer un schéma de données adapté. Un dashboard Power BI interactif a été développé pour visualiser les performances énergétiques, comparer prévisions et mesures, et identifier les parcs les plus efficaces. Les fonctionnalités incluent des indicateurs clés (R² score, écarts de production) et des filtres dynamiques (régions, périodes), répondant aux besoins opérationnels et décisionnels de l’entreprise.</p>
+                      <h3 data-i18n="project-technology">Technologie : POWER BI / SQL / SSIS)</h3>
+                      <p data-i18n="project-description">Ce projet a impliqué l'analyse des exigences et l'ETL de données fournies par Elia (systèmes éoliens et solaires) pour structurer un schéma de données adapté. Un dashboard Power BI interactif a été développé pour visualiser les performances énergétiques, comparer prévisions et mesures, et identifier les parcs les plus efficaces. Les fonctionnalités incluent des indicateurs clés (R² score, écarts de production) et des filtres dynamiques (régions, périodes), répondant aux besoins opérationnels et décisionnels de l'entreprise.</p>
                   </div>
               </div>
             </div>
         </div>
     </section>
-      
 
     <section class="resume-section p-3 p-lg-5 d-flex flex-column" id="certificates">
       <div class="my-auto">
@@ -393,8 +395,7 @@
                   <div class="icon">
                       <img class="logo5" src="./img/Certificat1.png" alt="Certificate Icon" />
                   </div>
-                  <h4 class="certificate-title">Django Application Development with SQL and
-                    Databases</h4>
+                  <h4 class="certificate-title" data-i18n="django-cert">Django Application Development with SQL and Databases</h4>
                   <a href="certificats/certificat1.pdf" target="_blank" download="Certificat1" class="download-btn">
                     voir le certificat
                   </a>
@@ -405,7 +406,7 @@
                   <div class="icon">
                       <img class="logo5" src="./img/intro_software.png" alt="Certificate Icon" />
                   </div>
-                  <h4 class="certificate-title"> Introduction to Software Engineering</h4>
+                  <h4 class="certificate-title" data-i18n="software-cert">Introduction to Software Engineering</h4>
                   <a href="certificats/certificat2.pdf" target="_blank" download="Certificat2" class="download-btn">
                     voir le certificat
                   </a>
@@ -415,7 +416,7 @@
                 <div class="icon">
                     <img class="logo5" src="./img/Regression.png" alt="Certificate Icon" />
                 </div>
-                <h4 class="certificate-title"> Supervised Machine Learning: Regression</h4>
+                <h4 class="certificate-title" data-i18n="ml-cert">Supervised Machine Learning: Regression</h4>
                 <a href="certificats/certificat3.pdf" target="_blank" download="Certificat2" class="download-btn">
                     voir le certificat
                 </a>
@@ -452,7 +453,7 @@
             </div>
         
             <div class="row">
-                Youssef_Fiher Copyright © 2024 - All rights reserved
+                <span data-i18n="copyright">Youssef_Fiher Copyright © 2024 - All rights reserved</span>
             </div>
         </div>
         
@@ -468,6 +469,7 @@
     <script src="vendor/jquery-easing/jquery.easing.min.js"></script>
 
     <!-- Custom scripts for this template -->
+    <script src="js/translations.js"></script>
     <script src="js/resume.js"></script>
 
   </body>

@@ -416,6 +416,51 @@ section.resume-section {
     padding-top: 3rem !important;
     padding-bottom: 3rem !important; } }
 
+.language-switch {
+  position: fixed;
+  top: 20px;
+  right: 20px;
+  z-index: 1000;
+}
+
+.language-switch .btn {
+  background: rgba(255, 255, 255, 0.9);
+  border: 2px solid #928580;
+  color: #928580;
+  font-weight: 600;
+  padding: 8px 16px;
+  border-radius: 20px;
+  transition: all 0.3s ease;
+  font-size: 14px;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+}
+
+.language-switch .btn:hover {
+  background: #928580;
+  color: white;
+  transform: translateY(-2px);
+  box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+}
+
+.language-switch .btn:active {
+  transform: translateY(0);
+  box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+}
+
+@media (max-width: 768px) {
+  .language-switch {
+    top: 10px;
+    right: 70px;
+  }
+
+  .language-switch .btn {
+    padding: 6px 12px;
+    font-size: 12px;
+  }
+}
+
 .bg-primary {
   background-color: #928580 !important; }
 
