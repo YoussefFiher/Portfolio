@@ -1,5 +1,7 @@
 const translations = {
     fr: {
+        "frontend-title": "FRONT-END",
+        "frontend-description": "J'ai une solide expérience dans l'utilisation de HTML5, CSS3 et JavaScript pour construire des sites web dynamiques et attrayants. Grâce à ma maîtrise des frameworks modernes tels qu'Angular et React, je suis capable de développer des applications web performantes et évolutives, tout en assurant une expérience utilisateur fluide sur différents appareils.",
         "presentation": "Je suis actuellement étudiant en programme de bachelier-master (BaMa) en sciences informatiques, avec une spécialisation en développement logiciel et programmation, et je poursuis un master en science des données. Mon parcours académique combine une formation rigoureuse en développement logiciel avec des compétences avancées en analyse de données, ce qui me permet d'aborder des problématiques complexes dans des domaines axés sur les données.",
         'about': 'À propos',
         'skills': 'Compétences',
@@ -39,6 +41,8 @@ const translations = {
         'emoji-desc': 'Ce projet consiste à développer un compilateur en Java, utilisant ANTLR, pour traduire un langage à base d\'emoji vers du code Python. Ce code Python est ensuite utilisé pour contrôler un micro-robot'
     },
     en: {
+        "frontend-title": "FRONT-END",
+        "frontend-description": "I have solid experience in using HTML5, CSS3, and JavaScript to build dynamic and attractive websites. Thanks to my mastery of modern frameworks such as Angular and React, I am able to develop high-performance and scalable web applications while ensuring a smooth user experience across different devices.",
         "presentation": "I am currently a student in the Bachelor-Master (BaMa) program in Computer Science, with a specialization in software development and programming, while pursuing a Master's degree in Data Science. My academic journey combines rigorous software development training with advanced data analysis skills, enabling me to tackle complex challenges in data-driven fields.",
         'about': 'About',
         'skills': 'Skills',
@@ -57,7 +61,7 @@ const translations = {
         'ml-cert': 'Supervised Machine Learning: Regression',
         'web-dev': 'Web Development',
         'web-dev-desc': 'I have expertise in creating robust and scalable applications. I use Node.js and Express.js to build high-performance APIs and manage client-server communications. Additionally, I have experience with Django and Flask for developing Python-based web solutions, allowing me to meet diverse project needs while ensuring seamless integration with databases and third-party systems.',
-        'si-modeling': 'IS Modeling',
+        'si-modeling': 'si Modeling',
         'si-modeling-desc': 'I master various tools and languages for information systems modeling, including UML for design, and different database management systems such as MySQL, SQLite, PostgreSQL, and MongoDB, enabling me to create robust data structures adapted to application needs.',
         'data-analysis': 'Data Analysis',
         'data-analysis-desc': 'I am involved in data analysis using various tools and techniques. This includes data visualization, machine learning, and graph mining to extract relevant information.',
